@@ -10,9 +10,6 @@ export const SearchBar = () => {
         setSearchInput(input)
     }
 
-    useEffect(() => {
-        console.log(movies)
-    }, [searchInput])
     return (
         <Container>
         <Grid2 container spacing={2} size="grow">
