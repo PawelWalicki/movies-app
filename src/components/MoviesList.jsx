@@ -1,5 +1,5 @@
 import { useMovies } from "../hooks/useMovies"
-import { Button, TextField, Container, Stack, ImageList, ImageListItem, useMediaQuery } from '@mui/material';
+import { Container, ImageList, ImageListItem, useMediaQuery } from '@mui/material';
 import { Link } from "react-router-dom";
 export const MoviesList = () => {
     const isMobile = useMediaQuery('(max-width:600px)')

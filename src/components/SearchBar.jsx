@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useMovies } from "../hooks/useMovies"
-import { Button, TextField, Grid2, Container, Stack, ImageList, ImageListItem, useMediaQuery } from '@mui/material';
+import { Button, TextField, Grid2, Container } from '@mui/material';
 
 export const SearchBar = () => {
     const {movies, searchInput, setSearchInput} = useMovies()
