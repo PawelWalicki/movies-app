@@ -3,7 +3,7 @@ import { useMovies } from "../hooks/useMovies"
 import { Button, TextField, Grid2, Container } from '@mui/material';
 
 export const SearchBar = () => {
-    const {movies, searchInput, setSearchInput} = useMovies()
+    const { setSearchInput} = useMovies()
     const [input, setInput] = useState("")
 
     const searchVideos = () => {
