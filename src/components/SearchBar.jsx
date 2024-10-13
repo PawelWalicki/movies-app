@@ -9,12 +9,17 @@ export const SearchBar = () => {
     const searchVideos = () => {
         setSearchInput(input)
     }
+    const handleEnterKeyPress = (e) => {
+      if(e.key=="Enter") {
+        searchVideos()
+      }
+    }
 
     return (
         <Container>
         <Grid2 container spacing={2} size="grow">
           <Grid2 display="flex"  justifyContent="center" alignItems="center" size="grow">
-            <TextField onChange={e=> setInput(e.target.value)} fullWidth id="movie-search" label="Search for movie" variant="outlined"></TextField>
+            <TextField onKeyDown={e => handleEnterKeyPress(e)} onChange={e=> setInput(e.target.value)} fullWidth id="movie-search" label="Search for movie" variant="outlined"></TextField>
           </Grid2>
           <Grid2 display="flex" justifyContent="center" alignItems="center">
             <Button variant='contained' onClick={() => searchVideos()}>Search</Button>
