@@ -5,6 +5,7 @@ import { NotFound } from './pages/NotFound';
 import { MovieDetails } from './pages/MovieDetails';
 import { Contact } from './pages/Contact';
 import { TvShowDetails } from './pages/TvShowDetails';
+import {FavouritesPage} from './pages/FavouritesPage'
 function App() {
   
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/movie/:movieId" element={<MovieDetails/>}></Route>
           <Route path="/tvshow/:tvshowId" element={<TvShowDetails/>}></Route>
           <Route path="/contact" element={<Contact></Contact>}/>
+          <Route path="/favourites" element={<FavouritesPage></FavouritesPage>}/>
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
       </Router>

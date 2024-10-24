@@ -9,7 +9,7 @@ export const Contact = () => {
            <a className="icons" href="https://github.com/PawelWalicki/movies-app"><GitHubIcon fontSize="large"/></a>
            <a className="icons" href="https://www.linkedin.com/in/paweł-walicki-a39b09176/"><LinkedInIcon fontSize="large"/></a>
         
-            <div className="buttonHome">
+            <div className="buttonContact">
                 <Link to={"/"}>
                     <Button variant='contained'>Home</Button>
                 </Link>
