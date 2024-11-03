@@ -11,6 +11,7 @@ export const TvShowDetails = () => {
     let { tvshowId } = useParams()
     let [tvShowDetails, setTvShowDetails] = useState({})
     let [isLoading, setIsLoading] = useState(true)
+    let [favTvShow, setFavTvShow] = useState([])
     const isMobile = useMediaQuery('(max-width:1100px)')
     useEffect(() => {
         setIsLoading(true)
@@ -30,6 +31,9 @@ export const TvShowDetails = () => {
             }
             )
             .catch(err => console.error('error:' + err));
+        const ls = JSON.parse(localStorage.getItem("favoriteTvShow"))
+        const favShows = ls ? ls : []
+        setFavTvShow(favShows)
     }, [])
 
     if (isLoading) {
@@ -54,11 +58,30 @@ export const TvShowDetails = () => {
     const getNormalizedVote = (vote) => {
         return Math.round((Number(vote) / 2) * 100) / 100
     }
+    const modifyFavourites = () => {
+        let favLs = localStorage.getItem("favoriteTvShow")
+        if (!favLs) {
+            localStorage.setItem("favoriteTvShow", JSON.stringify([tvshowId]))
+            setFavTvShow([tvshowId])
+        }
+        else {
+            favLs = JSON.parse(favLs)
+            if (!favLs.includes(tvshowId)) {
+                localStorage.setItem("favoriteTvShow", JSON.stringify([...favLs, tvshowId]))
+                setFavTvShow([...favLs, tvshowId])
+            } else {
+                favLs = favLs.filter(e => e !== tvshowId)
+                localStorage.setItem("favoriteTvShow", JSON.stringify(favLs))
+                setFavTvShow(favLs)
+            }
+        }
+    }
     return (
         <div className="tvShowDetailsBox">
             <Grid2 container spacing={2} >
                 <Grid2 size={isMobile ? 12 : 4}>
                     <div><img className="tvShowImage" style={{ height: 500 }} src={tvShowDetails.poster_path ? `https://image.tmdb.org/t/p/original/${tvShowDetails.poster_path}` : "/poster_not_found.png"} /></div>
+                    <button onClick={(e) => modifyFavourites()}>{favTvShow.includes(tvshowId) ? "Remove from favorites" : "Add to favorites"}</button>
                 </Grid2>
                 <Grid2 container>
                     <div className="glassTvShow">
@@ -67,7 +90,7 @@ export const TvShowDetails = () => {
                         <div className="nameDetails">Release date: </div>
                         <div>{tvShowDetails.first_air_date}</div>
                         <div className="nameDetails">Last episode to air:</div>
-                        <div>{tvShowDetails.last_episode_to_air.air_date}</div>
+                        <div>{tvShowDetails.last_episode_to_air ? tvShowDetails.last_episode_to_air.air_date : ""}</div>
                         <div className="nameDetails">All season: </div>
                         <div>{tvShowDetails.number_of_seasons}</div>
                         <div className="nameDetails">Original language:</div>

@@ -30,7 +30,7 @@ export const MovieDetails = () => {
             }
             )
             .catch(err => console.error('error:' + err));
-        let favMoviesLs = JSON.parse(localStorage.getItem("favoriteMovies"))
+        let favMoviesLs = JSON.parse(localStorage.getItem("favoriteMovie"))
         setFavMovies(favMoviesLs || [])
     }, [])
 
@@ -59,16 +59,16 @@ export const MovieDetails = () => {
         }
         return arr
     }
-   // favourites [123,4234,54,33]
+    // favourites [123,4234,54,33]
     const modifyFavourites = () => {
         let favLs = localStorage.getItem("favoriteMovie")
-        if(!favLs) {
+        if (!favLs) {
             localStorage.setItem("favoriteMovie", JSON.stringify([movieId]))
             setFavMovies([movieId])
         }
         else {
             favLs = JSON.parse(favLs)
-            if(!favLs.includes(movieId)){
+            if (!favLs.includes(movieId)) {
                 localStorage.setItem("favoriteMovie", JSON.stringify([...favLs, movieId]))
                 setFavMovies([...favLs, movieId])
             } else {
@@ -84,7 +84,7 @@ export const MovieDetails = () => {
             <Grid2 container spacing={2}>
                 <Grid2 size={isMobile ? 12 : 4}>
                     <div><img className="movieImage" style={{ height: 500 }} src={movieDetails.poster_path ? `https://image.tmdb.org/t/p/original/${movieDetails.poster_path}` : "/poster_not_found.png"} /></div>
-                    <button onClick={(e) => modifyFavourites()}>{favMovies.includes(movieId)?"Remove from favorites": "Add to favorites"}</button>
+                    <button onClick={(e) => modifyFavourites()}>{favMovies.includes(movieId) ? "Remove from favorites" : "Add to favorites"}</button>
                 </Grid2>
                 <Grid2 container>
                     <div className="glassMovie">
