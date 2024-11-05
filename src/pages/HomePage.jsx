@@ -12,6 +12,11 @@ export const HomePage = () => {
                 <SearchBar></SearchBar>
                 <MoviesList></MoviesList>
             </Stack>
+            <div className='buttonFavourites'>
+                <Link to="/favourites">
+                    <Button variant='contained'>FAVOURITES</Button>
+                </Link>
+            </div>
             <div className='buttonContact'>
                 <Link to="/contact">
                     <Button variant='contained'>CONTACT</Button>
