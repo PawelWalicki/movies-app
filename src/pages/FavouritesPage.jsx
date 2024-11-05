@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react"
 import { MovieListItem } from "../components/MovieListItem"
-import { Container, ImageList, useMediaQuery } from '@mui/material';
-
+import { Button, Container, ImageList, useMediaQuery } from '@mui/material';
+import { Link } from "react-router-dom";
+import './FavouritesPage.css'
 
 export const FavouritesPage = () => {
     const [tvShows, setTvShows] = useState([])
     const [movies, setMovies] = useState([])
-    const [isLoading,setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
     const isMobile = useMediaQuery('(max-width:600px)')
 
     useEffect(() => {
 
         const fetchData = async () => {
-            let lsTvShows = JSON.parse(localStorage.getItem("favoriteTvShow")) ?? [] 
+            let lsTvShows = JSON.parse(localStorage.getItem("favoriteTvShow")) ?? []
             let lsMovies = JSON.parse(localStorage.getItem("favoriteMovie")) ?? []
             const tvShowPromises = lsTvShows.map((e) => {
                 const url = `https://api.themoviedb.org/3/tv/${e}?language=en-US`;
@@ -49,20 +50,27 @@ export const FavouritesPage = () => {
         fetchData()
     }, [])
 
-    if(isLoading) return (
+    if (isLoading) return (
         <div>Loading</div>
     )
 
     return (
-        <div className={movies.length > 0 ? `containerBox` : ''}>
-            <Container >
-                <ImageList cols={isMobile ? 2 : 4}>
-                     {
-                         [...movies, ...tvShows].map(e => (
-                         <MovieListItem movie={e}></MovieListItem>))
-            }
-                 </ImageList>
-            </Container>
+        <div className="favouritesBox">
+            <div className={movies.length > 0 ? `containerBox` : ''}>
+                <Container >
+                    <ImageList cols={isMobile ? 2 : 4}>
+                        {
+                            [...movies, ...tvShows].map(e => (
+                                <MovieListItem movie={e}></MovieListItem>))
+                        }
+                    </ImageList>
+                    <div className="buttonHome">
+                        <Link to={"/"}>
+                            <Button variant='contained'>Home</Button>
+                        </Link>
+                    </div>
+                </Container>
+            </div>
         </div>
     )
 }

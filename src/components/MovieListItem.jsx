@@ -1,6 +1,7 @@
 import './MovieList.css'
 import { Link } from "react-router-dom";
 import { ImageListItem } from '@mui/material';
+import './MovieListItem.css'
 
 export const MovieListItem = ({movie}) => {
     return (
