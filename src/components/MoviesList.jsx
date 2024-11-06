@@ -1,8 +1,8 @@
 import { useMovies } from "../hooks/useMovies"
 import { Container, ImageList, useMediaQuery } from '@mui/material';
 import {MovieListItem} from "./MovieListItem"
-
 import './MovieList.css'
+
 export const MoviesList = () => {
     const isMobile = useMediaQuery('(max-width:600px)')
     const { movies } = useMovies()

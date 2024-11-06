@@ -1,9 +1,12 @@
 .favouritesBox {
     height: 100%;
+    background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(103,103,139,1) 48%, rgba(22,75,86,1) 100%);
+    padding-top: 10px;
 }
 
 .buttonHome {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
