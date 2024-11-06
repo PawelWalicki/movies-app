@@ -117,6 +117,11 @@ export const MovieDetails = () => {
                     </div>
                 </Grid2>
             </Grid2>
+            <div className='buttonFavourites'>
+                <Link to="/favourites">
+                    <Button variant='contained'>FAVOURITES</Button>
+                </Link>
+            </div>
             <div className="buttonHome">
                 <Link to={"/"}>
                     <Button variant='contained'>Home</Button>

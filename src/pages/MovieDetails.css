@@ -14,9 +14,15 @@
     color: rgb(238, 230, 5);
 }
 
+.buttonFavourites {
+    padding-top: 5px;
+    text-align: center;
+}
+
 .buttonHome {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .glassMovie {
@@ -28,3 +34,4 @@
     margin-bottom: auto;
     padding: 10px;
 }
+

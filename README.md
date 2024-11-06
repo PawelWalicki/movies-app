@@ -1,6 +1,6 @@
 #  Movie Application
 
-- Live Website: []()
+- Live Website: [movies-app-two-psi.vercel.app](movies-app-two-psi.vercel.app)
 
 ### Features
 - The user can search for a film or series 
@@ -15,7 +15,7 @@
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/PawelWalicki/movies-app)
-- Live Site URL: [Live Site URL]()
+- Live Site URL: [Live Site URL](movies-app-two-psi.vercel.app)
 
 ## My process
 
@@ -28,12 +28,6 @@
 - Context Api
 - Environment variables
 
-### Prepared for widths:
-
-- 1440px
-- 1024px
-- 768px (tablet)
-- 425-320px (mobile)
 
 ## Author
 Paweł Walicki
