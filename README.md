@@ -1,6 +1,6 @@
 #  Movie Application
 
-- Live Website: [movies-app-two-psi.vercel.app](movies-app-two-psi.vercel.app)
+- Live Website: [movies-app-two-psi.vercel.app](https://movies-app-two-psi.vercel.app/)
 
 ### Features
 - The user can search for a film or series 
@@ -15,7 +15,7 @@
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/PawelWalicki/movies-app)
-- Live Site URL: [Live Site URL](movies-app-two-psi.vercel.app)
+- Live Site URL: [Live Site URL](https://movies-app-two-psi.vercel.app/)
 
 ## My process
 

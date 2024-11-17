@@ -23,7 +23,7 @@ export const MoviesProvider = ({ children }) => {
       .catch(err => console.error('error:' + err));
     console.log("Looking for ", searchInput)
   }, [searchInput])
-  return ( //zapytać o te wartości(value) po co one są i co robią 
+  return ( 
     <MoviesContext.Provider value={{ movies, searchInput, setSearchInput }}> 
       {children}
     </MoviesContext.Provider>
