@@ -1,6 +1,6 @@
 .contactBox {
     text-align: center;
-    background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(103,103,139,1) 48%, rgba(22,75,86,1) 100%);
+    /* background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(103,103,139,1) 48%, rgba(22,75,86,1) 100%); */
     padding: 40px 30px;
     color: rgb(192, 192, 192);
     min-height: 100vh;
